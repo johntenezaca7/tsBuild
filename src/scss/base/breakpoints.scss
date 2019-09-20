@@ -1,0 +1,36 @@
+@mixin BreakPoint($point) {
+	@if $point == large {
+		@media (min-width: rem(1400)) { @content ; }
+	}
+	@else if $point == mediumlarge {
+		@media (min-width: rem(1200)) { @content ; }
+	}
+
+  @else if $point == bs4large {
+    @media (min-width: rem(992)) { @content ; }
+  }
+	@else if $point == bs4medium {
+		@media (max-width: rem(991)) { @content ; }
+	}
+  @else if $point == medium {
+    @media (min-width: rem(768)) { @content ; }
+  }
+	@else if $point == mediumsmall {
+		@media (min-width: rem(481)) { @content ; }
+  }
+  @else if $point == bs4mediumonly {
+    @media (min-width: rem(768)) and (max-width: rem(991)) { @content ; }
+  }
+  @else if $point == mobileonly {
+    @media (min-width: rem(320)) and (max-width: rem(1200)) { @content ; }
+  }
+  @else if $point == mediumonly {
+    @media (min-width: rem(768)) and (max-width: rem(1200)) { @content ; }
+  }
+  @else if $point == smallonly {
+		@media (min-width: rem(320)) and (max-width: rem(767)) { @content ; }
+  }
+  @else if $point == mediumlargeonly {
+		@media (min-width: rem(1080)) and (max-width: rem(1400)) { @content ; }
+	}
+}
